@@ -21,12 +21,15 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Bean
     public VelocityConfigurer velocityConfigurer(){
-        // "/WEB-INF/velocity" is the path you should pass to the ResourceLoaderPath method of that bean.
-        // ResourceLoaderPath("/WEB-INF/velocity");
+        VelocityConfigurer velocityConfigurer = new VelocityConfigurer();
+        velocityConfigurer.setResourceLoaderPath("/WEB-INF/velocity");
+        return velocityConfigurer;
     }
 
     @Bean
     public VelocityViewResolver velocityViewResolver(){
-        //".vm" is the suffix configured in that bean (check the available methods of that bean)
+        VelocityViewResolver velocityViewResolver = new VelocityViewResolver();
+        velocityViewResolver.setSuffix(".vm");
+        return velocityViewResolver;
     }
 }

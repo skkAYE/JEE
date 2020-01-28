@@ -7,17 +7,12 @@ import yncrea.lab04.web.config.WebConfig;
 
 public class Initializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-
-    private AppConfig appConfig;
-    private DBConfig dbConfig;
-    private WebConfig webConfig;
-
-    public  Class<Object>[] getRootConfigClasses(){
-        return new  Class<Object>[]{appConfig, dbConfig};
+    public  Class<?>[] getRootConfigClasses(){
+        return new  Class<?>[]{AppConfig.class, DBConfig.class};
     }
 
     public Class<?>[] getServletConfigClasses(){
-        return new Class<?>[]{webConfig};
+            return new Class<?>[]{WebConfig.class};
     }
 
     public String[] getServletMappings(){
